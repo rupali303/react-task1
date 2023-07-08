@@ -9,9 +9,9 @@ function App() {
     <>
      {/* <TaskOne/> */}
      {/* <TaskThree/> */}
-     <TaskFour/>
+     {/* <TaskFour/> */}
      {/* <TaskFive/> */}
-     {/* <TaskTwo/> */}
+     <TaskTwo/>
     </>
   );
 }

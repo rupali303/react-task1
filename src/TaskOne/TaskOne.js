@@ -1,68 +1,77 @@
 import React, { useState } from 'react';
-import "./Form.css"
+import './Form.css';
 
 const TaskOne = () => {
-  const [selectedOption, setSelectedOption] = useState('');
-  const [showForm, setShowForm] = useState(false)
-  const [name, setName] = useState({
-    firstname: "",
-    lastname: "",
-    phone: "",
-    email: ""
-  })
+  const [contactType, setContactType] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
 
-  const handleChange = (e) => {
-    setName((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  const handleContactTypeChange = (event) => {
+    setContactType(event.target.value);
   };
-
-  const handleDropdownChange = (e) => {
-    setSelectedOption(e.target.value);
-    setShowForm(e.target.value !=='')
-  };
-
-  const handleOptionChange = (e) => {
-    console.log(e.target.value);
-    
-  }
-
   return (
-    <form className="form">
-      <div className='row'>
-        <div className='col-md-6'>
-          <label style={{fontWeight:"bold"}} htmlFor="firstname">First Name:</label>
-          <input type="text"  name='firstname' onChange={handleChange} />
+    <div className="contact-form">
+      <div className="form-container">
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="firstName">First Name</label><br></br>
+            <input
+              type="text"
+              id="firstName"
+              value={firstName}
+              onChange={(event) => setFirstName(event.target.value)}
+            />
+          </div>
+          <div className="form-group1">
+            <label htmlFor="lastName">Last Name</label><br></br>
+            <input
+              type="text"
+              id="lastName"
+              value={lastName}
+              onChange={(event) => setLastName(event.target.value)}
+            />
+          </div>
         </div>
-
-        <div className=" col-md-6">
-          <label style={{fontWeight:"bold"}} htmlFor="lastname">Last Name:</label>
-          <input type="text"  name='lastname' onChange={handleChange} />
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="contactType">How should we contact you?</label><br></br>
+            <select
+              id="contactType"
+              value={contactType}
+              onChange={handleContactTypeChange}
+            >
+              <option value="">Choose option</option>
+              <option value="phone">Phone</option>
+              <option value="email">Email</option>
+            </select>
+          </div>
+          {contactType === 'phone' && (
+            <div className="form-group1">
+              <label htmlFor="phone">Phone Number</label><br></br>
+              <input
+                type="text"
+                id="phone"
+                value={phone}
+                onChange={(event) => setPhone(event.target.value)}
+              />
+            </div>
+          )}
+          {contactType === 'email' && (
+            <div className="form-group1">
+              <label htmlFor="email">Email Address</label><br></br>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </div>
+          )}
         </div>
       </div>
-
-      <div className='row'>
-       
-      <div className="form-group col-6">
-        <label style={{fontWeight:"bold"}} htmlFor="dropdown">How should we contact you?</label>
-        <select id="dropdown" value={selectedOption} onChange={handleDropdownChange}>
-          <option style={{fontWeight:"bold"}}>Chose option</option>
-          <option onChange={handleOptionChange} value="option1">phone</option>
-          <option onChange={handleOptionChange} value="option2">Email</option>
-        </select>
-      </div>
-      </div>
- <div>
-{showForm && (<div className="form-group col-md-6">
-        <label htmlFor="phone">Phone:</label>
-        <input type="number" id="phone" name='phone'  />
-      </div> ) 
-    
-      }
-      
-
-      </div>
-       
-    </form>
-
+    </div>
   );
 };
 

@@ -33,8 +33,8 @@ function TaskFour1() {
     }
     return (
         <>
-        <div style={{width:"300px",border:"2px solid gray",margin:"50px auto",padding:"20px"}}>
-            <input
+        <div style={{width:"50%",border:"2px solid gray",margin:"10px auto",padding:"20px"}}>
+            <input style={{marginBottom:"20px"}}
                 type="number"
                 value={value1}
                 onChange={handleValue1Change}
@@ -58,10 +58,11 @@ function TaskFour1() {
             />
             <button style={{marginTop:"10px"}} onClick={handleCreateChart}>Create Chart</button>
            
+            <VictoryPie radius={100}  data={data} />
         </div>
-        <div>
+        {/* <div>
         <VictoryPie radius={50}  data={data} />
-    </div>
+    </div> */}
     </>
     );
 }

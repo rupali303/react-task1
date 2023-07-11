@@ -9,14 +9,15 @@ function HodResister() {
     const [selectedOption, setSelectedOption] = useState('');
     const [showForm, setShowForm] = useState(false)
     const [name, setName] = useState({
-        username:"",
-        password:"",
+        username: "",
+        password: "",
         firstname: "",
         lastname: "",
         phone: "",
-        email: ""
+        email: "",
+        hod:"",
+        staff:""
     })
-
     const handleChange = (e) => {
         setName((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     };
@@ -41,7 +42,6 @@ function HodResister() {
         console.log(e.target.value);
 
     }
-
     return (
         <>
             <form >
@@ -61,51 +61,66 @@ function HodResister() {
                     }}
                 >
                     <div className='check'>
-                        <label style={{"fontWeight":"bold"}}>
-                            phone
-                            <Radio type='radio' name='phone' value="phone" onChange={handleRadioChange} checked={selected === "phone"} />
+                        <label style={{ "fontWeight": "bold" }}>
+                            HOD
+                            <Radio type='radio' name='hod' value="hod" onChange={handleRadioChange} checked={selected === "hod"} />
                         </label>
-                        <label style={{"fontWeight":"bold"}}>
-                            email
-                            <Radio type='radio' name='email' value="email" onChange={handleRadioChange} checked={selected === "email"} />
+                        <label style={{ "fontWeight": "bold" }}>
+                            Staff
+                            <Radio type='radio' name='staff' value="staff" onChange={handleRadioChange} checked={selected === "staff"} />
                         </label>
                     </div>
 
-                    <div >
-                        <label style={{"fontWeight":"bold"}} htmlFor="firstname">First Name:</label>
-                        <input type="text" value={name.firstname} name='firstname' onChange={handleChange} />
+                    <div className='row'>
+                        <div className='col-md-6' >
+                            <label style={{ "fontWeight": "bold" }} htmlFor="firstname">First Name:</label>
+                            <input required type="text" value={name.firstname} name='firstname' onChange={handleChange} />
+                        </div>
+
+                        <div className='col-md-6' >
+                            <label style={{ "fontWeight": "bold" }} htmlFor="lastname">Last Name:</label>
+                            <input required type="text" value={name.lastname} name='lastname' onChange={handleChange} />
+                        </div>
+
+
+
+
+                        <div className='col-md-6'>
+                            <label style={{ "fontWeight": "bold" }} htmlFor="email">Email:</label>
+                            <input required style={{ "margin": "15px 0", "padding": "0 18px" }} type="email" value={name.email} name='email' onChange={handleChange} />
+                        </div>
+
+                        <div className='col-md-6'>
+                            <label style={{ "fontWeight": "bold" }} htmlFor="contact">Contact:</label>
+                            <input required style={{ "margin": "15px 0", "padding": "0 10px" }} type="number" value={name.contact} name='contact' onChange={handleChange} />
+                        </div>
+
                     </div>
 
-                    <div >
-                        <label style={{"fontWeight":"bold"}} htmlFor="lastname">Last Name:</label>
-                        <input type="text" value={name.lastname} name='lastname' onChange={handleChange} />
+                    <div className='row'>
+                        <div className='col-md-6'>
+                            <label style={{ "fontWeight": "bold" }} htmlFor="dropdown">Department</label>
+                            <select id="dropdown" value={selectedOption} onChange={handleDropdownChange}>
+                                <option value="">Chose option</option>
+                                <option onChange={handleOptionChange} value="option1">Science</option>
+                                <option onChange={handleOptionChange} value="option2">Mathematics</option>
+                                <option onChange={handleOptionChange} value="option3">Computer</option>
+                                <option onChange={handleOptionChange} value="option4">Electronics</option>
+                            </select>
+                        </div>
                     </div>
-                    <div >
-                        <label style={{"fontWeight":"bold"}} htmlFor="email">Email:</label>
-                        <input style={{"margin":"15px 0", "padding":"0 18px"}} type="email" value={name.email} name='email' onChange={handleChange} />
-                    </div>
-
-                    <div >
-                        <label style={{"fontWeight":"bold"}} htmlFor="contact">Contact:</label>
-                        <input style={{"margin":"15px 0", "padding":"0 10px"}} type="number" value={name.contact} name='contact' onChange={handleChange} />
-                    </div>
-
-                    <div>
-                        <label style={{"fontWeight":"bold"}} htmlFor="dropdown">Department</label>
-                        <select id="dropdown" value={selectedOption} onChange={handleDropdownChange}>
-                            <option value="">Chose option</option>
-                            <option onChange={handleOptionChange} value="option1">Science</option>
-                            <option onChange={handleOptionChange} value="option2">Mathematics</option>
-                            <option onChange={handleOptionChange} value="option3">Computer</option>
-                            <option onChange={handleOptionChange} value="option4">Electronics</option>
-                        </select>
-                    </div>
-
-                    <TextField  label='username' type='text' placeholder='Enter username' name='username' value={name.username} onChange={handleChange} variant='outlined' sx={{width:"100%"}} margin='normal' />
-                    <TextField  label='password' type='password' placeholder='Enter password' name='password' value={name.password} onChange={handleChange} variant='outlined' margin='normal' />
-                    <Button type='submit' sx={{ mt: 2 , mb:2, textAlign:"center" }} variant='contained'>Login</Button>
-                    <span style={{"fontWeight":"bold"}}>Already resistered?<Link href="#">Login</Link></span>
-
+                    <div className='row'>
+                <div className='col-md-6' >
+                    <label htmlFor="username">Username:</label>
+                    <input required type="text" value={name.username} name='username' onChange={handleChange} />
+                </div>
+                <div className='col-md-6' >
+                    <label htmlFor="password">Password:</label>
+                    <input required type="password" value={name.password} name='password' onChange={handleChange} />
+                </div>
+            </div>
+                    <Button type='submit' sx={{ mt: 2, mb: 2, textAlign: "center" }} variant='contained'>Login</Button>
+                    <span style={{ "fontWeight": "bold" }}>Already resistered?<Link href="Login">Login</Link></span>
                 </Box>
             </form>
         </>

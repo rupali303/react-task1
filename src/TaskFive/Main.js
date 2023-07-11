@@ -8,8 +8,8 @@ import { router } from './router'
 function Main() {
   return (
     <>
-{/* <LoginPage/>
-<HodResister/> */}
+{/* <LoginPage/> */}
+{/* <HodResister/> */}
 {/* <Home/> */}
 {/* <LoginPage/> */}
 <RouterProvider router={router}/>

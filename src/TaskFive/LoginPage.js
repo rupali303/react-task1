@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import HodResister from './HodResister'
 
 function LoginPage() {
-
     const [formData, setFormData] = useState({
         username: "",
         password: ""
@@ -12,14 +11,11 @@ function LoginPage() {
 const handleSubmit=(e)=>{
 e.preventDefault()
 }
-
     const handleChange = (e) => {
         setFormData((prev) => ({
             ...prev, [e.target.name]: e.target.value
         }))
     }
-
-
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -41,9 +37,8 @@ e.preventDefault()
                     <TextField label='username' type='text' placeholder='Enter username' name='username' value={formData.username} onChange={handleChange} variant='outlined' sx={{width:"100%"}} margin='normal' />
                     <TextField label='password' type='password' placeholder='Enter password' name='password' value={formData.password} onChange={handleChange} variant='outlined' margin='normal' />
                     <Button type='submit' sx={{ mt: 2 , mb:2, textAlign:"center" }} variant='contained'>Login</Button>
-                    <span>Not resistered Yet?<Link href="#">Register</Link></span>
-                    {/* <span>Not resistered Yet?<Link to={<HodResister/>}>Register</Link></span> */}
-
+                    <span>Not resistered Yet?
+                        <Link href="LoginPage">Register</Link></span>
                 </Box>
             </form>
         </>
@@ -56,9 +51,6 @@ export default LoginPage
 
 
 
-// input#\:r1\: {
-//     width: 100%;
-// }
 
 
 

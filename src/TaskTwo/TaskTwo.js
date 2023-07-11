@@ -19,10 +19,10 @@ const TaskTwo = () => {
     const handleRadioChange = (e) => {
         const { value } = e.target;
         setSelected(value);
-        if (value == "phone") {
+        if (value === "phone") {
             setShowInput1(true); 
             setShowInput2(false); 
-          } else if (value == "email") {
+          } else if (value === "email") {
             setShowInput1(false); 
             setShowInput2(true); 
           }
@@ -56,10 +56,7 @@ const TaskTwo = () => {
                         <input type='radio' name='email' value="email" onChange={handleRadioChange} checked={selected === "email"} />
                     </label>
                 </div>
-
-
             </div>
-
             {showInput1 && (
         <div>
           <label>

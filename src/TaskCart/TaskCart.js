@@ -1,22 +1,13 @@
-import { AppBar, Button, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { AppBar, Button, Toolbar,  useTheme } from '@mui/material'
 import React, { useState } from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-// import { useNavigate } from 'react-router-dom';
 
 function TaskCart() {
 
-  // const navigate = useNavigate()
   const [index, setIndex] = useState(0)
 
   const theme = useTheme()
-  // console.log(theme);
-
-  // const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
-  // console.log(isMobile);
-
-  // const handleLogin = () => {
-  //   navigate("/login")
-  // }
+  
 const handleLogin=()=>{
 
 }

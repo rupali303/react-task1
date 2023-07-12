@@ -9,12 +9,12 @@ import CardTask from "./CardTask/Main"
 function App() {
   return (
     <>
-     <TaskOne/>
+     {/* <TaskOne/> */}
      {/* <TaskThree/> */}
      {/* <TaskFour/> */}
      {/* <TaskFive/> */}
      {/* <TaskTwo/> */}
-     {/* <TaskCart/> */}
+     <TaskCart/>
      {/* <CardTask/> */}
     </>
   );

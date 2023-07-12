@@ -7,6 +7,6 @@ function Main() {
         <TaskCart/>
     </div>
   )
-}
+}    
 
-export default Main
+export default Main  

@@ -21,7 +21,7 @@ const Accordion2 = () => {
     };
 
     return (
-        <div className="containerAcc">
+        <div className="Acc">
             <div className="add">
                 <h2>Add Section</h2>
                 <div className="form-group">

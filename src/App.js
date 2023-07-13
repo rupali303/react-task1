@@ -6,6 +6,7 @@ import TaskFive from "./TaskFive/Main"
 import TaskTwo from './TaskTwo/Main';
 import TaskCart from './TaskCart/Main';
 import CardTask from "./CardTask/Main"
+import FiveTask from "./FiveTask/Main"
 function App() {
   return (
     <>
@@ -14,8 +15,9 @@ function App() {
      {/* <TaskFour/> */}
      {/* <TaskFive/> */}
      {/* <TaskTwo/> */}
-     <TaskCart/>
+     {/* <TaskCart/> */}
      {/* <CardTask/> */}
+     <FiveTask/>
     </>
   );
 }

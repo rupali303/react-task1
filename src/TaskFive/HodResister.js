@@ -120,7 +120,7 @@ function HodResister() {
                 </div>
             </div>
                     <Button type='submit' sx={{ mt: 2, mb: 2, textAlign: "center" }} variant='contained'>Login</Button>
-                    <span style={{ "fontWeight": "bold" }}>Already resistered?<Link href="Login">Login</Link></span>
+                    <span style={{ "fontWeight": "bold" }}>Already resistered?<Link href="LoginPage">Login</Link></span>
                 </Box>
             </form>
         </>

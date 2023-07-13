@@ -10,14 +10,14 @@ import FiveTask from "./FiveTask/Main"
 function App() {
   return (
     <>
-     {/* <TaskOne/> */}
+     <TaskOne/>
      {/* <TaskThree/> */}
      {/* <TaskFour/> */}
      {/* <TaskFive/> */}
      {/* <TaskTwo/> */}
      {/* <TaskCart/> */}
      {/* <CardTask/> */}
-     <FiveTask/>
+     {/* <FiveTask/> */}
     </>
   );
 }

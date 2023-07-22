@@ -32,14 +32,14 @@ function Dashboard2() {
             passWord: password
         };
         setUser([...user, newUser]);
-        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("user", JSON.stringify([...user,newUser]));
     };
     const handleRegistration = () => {
         setFlag(false);
     };
     return (
         flag === true ? (
-            <div className='container'>
+            <div className='container1'>
                 <Typography variant="h4" align="center" gutterBottom>
                     Leave Management
                 </Typography>

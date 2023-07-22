@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.container, .register-container{
+.container1, .register-container{
     width: 50vw;
     border: 2px solid rgb(7, 7, 7);
     padding: 15px;

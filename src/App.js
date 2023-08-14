@@ -3,13 +3,15 @@ import TaskOne from "./TaskOne/Main"
 import TaskThree from "./TaskThree/Main"
 import TaskFour from "./TaskFour/Main"
 import TaskTwo from './TaskTwo/Main'
+import CartTask from "./CartTask/Main"
 function App() {
   return (
     <>
-     <TaskOne/>
+     {/* <TaskOne/> */}
      {/* <TaskThree/> */}
-     {/* <TaskFour/> */}
+     <TaskFour/>
      {/* <TaskTwo/> */}
+     {/* <CartTask/> */}
     </>
   );
 }

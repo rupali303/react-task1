@@ -56,7 +56,7 @@ function TaskFour1() {
                     }
                 }}
             />
-            <button style={{marginTop:"10px"}} onClick={handleCreateChart}>Create Chart</button>
+            <button style={{marginTop:"30px",backgroundColor:"blue",borderRadius:"10px"}} onClick={handleCreateChart}>Create Chart</button>
            
             <VictoryPie radius={100}  data={data} />
         </div>
